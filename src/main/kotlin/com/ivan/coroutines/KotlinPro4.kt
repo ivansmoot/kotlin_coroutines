@@ -3,11 +3,9 @@ package com.ivan.coroutines
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
-
-fun main() {
-
-    // 使用协程
+fun main() = runBlocking {
     GlobalScope.launch {
         delay(1000)
         println("kotlin coroutines")
@@ -15,7 +13,8 @@ fun main() {
 
     println("first")
 
-    Thread.sleep(2000)
+    delay(2000)
 
     println("last")
+
 }
