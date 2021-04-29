@@ -15,11 +15,12 @@ fun main() = runBlocking {
         println("hello")
         Thread.sleep(6000)
 
-        value1.start()
-        value2.start()
+        // 不start就成了串行
+//        value1.start()
+//        value2.start()
 
-        val result1 = value1.await()
         val result2 = value2.await()
+        val result1 = value1.await()
 
         println("$result1 + $result2 = ${result1 + result2}")
     }
