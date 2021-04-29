@@ -1,4 +1,4 @@
-package com.ivan.coroutines
+package coroutines1
 
 import kotlin.concurrent.thread
 

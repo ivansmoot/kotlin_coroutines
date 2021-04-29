@@ -1,4 +1,4 @@
-package com.ivan.coroutines
+package coroutines1
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -6,13 +6,16 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 fun main() = runBlocking {
-
-    launch {
+    val myJob = GlobalScope.launch {
         delay(1000)
-        print("kotlin coroutines")
+        println("kotlin coroutines")
     }
 
-    // 直接使用launch而不是GlobalScope.launch，这里当first输出后，并没有直接关闭JVM，而是等待协程的执行完毕
     println("first")
+
+    // 等myJob这个协程执行完毕
+    myJob.join()
+
+    println("last")
 
 }

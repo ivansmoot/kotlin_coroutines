@@ -1,4 +1,4 @@
-package com.ivan.coroutines
+package coroutines1
 
 fun main() {
     test(5) {

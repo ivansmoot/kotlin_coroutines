@@ -1,4 +1,4 @@
-package coroutines
+package coroutines2
 
 import kotlinx.coroutines.*
 
